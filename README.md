@@ -10,6 +10,13 @@ Implementation of various ML Models in the context of Federated Learning
 ## Running locally
 Execute ```python main.py``` with the following arguments
 
+- `-c`, `--num_clients`: Number of clients (default: 1)
+- `-m`, `--model`: ML Model to use for training (default: "logreg")
+- `-d`, `--dataset`: Data to train client models on (default: "mnist")
+- `-s`, `--skewed`: Flag indicating whether or not to skew training data for MNIST (default: "false")
+- `-i`, `--iid`: Flag indicating whether or not to use IID or non-IID data (default: "false")
+
+
 ## Examples
 
 ```

@@ -232,7 +232,7 @@ def create_sample_with_custom_distribution(x, y, dist, total_samples):
     # Return the sampled data and labels
     return sampled_x, sampled_y
 
-def load_mnist_skewed(num):
+def load_mnist_skewed(num, linear):
     """
     Loads the MNIST dataset with a skewed data distribution.
     """
@@ -241,9 +241,11 @@ def load_mnist_skewed(num):
     dist[str(num)] = 0.8
     sampled_x_train, sampled_y_train = create_sample_with_custom_distribution(x_train, y_train, dist, len(y_train)/10)
 
-    sampled_x_train = np.reshape(sampled_x_train, (sampled_x_train.shape[0], -1))
-    x_test = np.reshape(x_test, (x_test.shape[0], -1))
-    # sampled_x_train, x_test = sampled_x_train[..., np.newaxis]/255.0, x_test[..., np.newaxis]/255.0
+    if linear:
+        sampled_x_train = np.reshape(sampled_x_train, (sampled_x_train.shape[0], -1))
+        x_test = np.reshape(x_test, (x_test.shape[0], -1))
+    else:
+        sampled_x_train, x_test = sampled_x_train[..., np.newaxis]/255.0, x_test[..., np.newaxis]/255.0
 
     return (sampled_x_train, sampled_y_train), (x_test, y_test)
 

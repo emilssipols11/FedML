@@ -58,7 +58,6 @@ if __name__ == '__main__':
     parser.add_argument('-a', '--available_clients', type=int, default=1, help='Number of minimum necessary available clients')
     parser.add_argument('-f', '--fit_clients', type=int, default=1, help='Number of minimum necessary clients for fitting')
     parser.add_argument('-e', '--evaluate_clients', type=int, default=1, help='Number of minimum necessary clients for evaluating')
-    # TODO: make enums
     parser.add_argument('-m', '--model', type=str, default="logreg", help='ML Model to use for training')
     parser.add_argument('-d', '--dataset', type=str, default="mnist", help='Data to train client models on')
     parser.add_argument('-s', '--skewed', type=str, default="false", help='Flag weather or not to skew training data for MNIST')

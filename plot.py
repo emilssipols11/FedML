@@ -1,4 +1,5 @@
 import json
+import matplotlib.pyplot as plt
 
 model = "RNN"
 dataset = "MNIST"
@@ -21,8 +22,6 @@ if dataset == "MNIST":
         iid4 = json.load(file)
 
 
-    #plotting the accuracy values
-    import matplotlib.pyplot as plt
     plt.plot(central, label=f"Centralized")
     plt.plot(iid2, label=f"IID")
     plt.plot(iid3, label=f"non-IID")
@@ -45,8 +44,6 @@ else:
         # Read the JSON data from the file and parse it into a dictionary
         niid = json.load(file)
 
-    #plotting the accuracy values
-    import matplotlib.pyplot as plt
     plt.plot(central, label=f"Centralized")
     plt.plot(niid, label=f"Federated 3 Clients")
     plt.xlabel("Communication Round")
