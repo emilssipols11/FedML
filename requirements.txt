@@ -1,0 +1,6 @@
+numpy
+tensorflow
+matplotlib
+flwr
+scikit-learn
+openml
