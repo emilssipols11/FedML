@@ -64,4 +64,4 @@ if __name__ == '__main__':
     parser.add_argument('-i', '--iid', type=str, default="false", help='Flag weather or not to  use iid or non-iid data')
     args = parser.parse_args()
 
-    main(args.num_clients, args.num_clients, args.num_clients, args.num_clients, args.model, args.dataset, args.skewed, args.iid)
+    main(args.num_clients, args.available_clients, args.fit_clients, args.evaluate_clients, args.model, args.dataset, args.skewed, args.iid)
